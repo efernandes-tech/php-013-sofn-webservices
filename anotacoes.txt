@@ -1,4 +1,16 @@
 # php-013-sofn-webservices
 
 # Anotações:
-- ...
+- Criando aplicação REST.
+    - Micro-framework Lumen tem foco 100% em APIs RESTful.
+        https://lumen.laravel.com/
+    - Atualizar o composer.
+        composer selfupdate
+    - Criando aplicação.
+        composer create-project --prefer-dist laravel/lumen php-webservice
+    - Criar arquivo de ".env".
+        cp .env.example .env
+    - Criar o database SQLite.
+        touch database/database.sqlite
+    - Rodar.
+        php -S localhost:1337 -t public public/index.php
