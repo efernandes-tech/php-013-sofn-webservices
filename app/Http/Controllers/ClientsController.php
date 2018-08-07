@@ -10,4 +10,9 @@ class ClientsController extends Controller
     {
         return Client::all();
     }
+
+    public function show($id)
+    {
+        return Client::find($id);
+    }
 }
