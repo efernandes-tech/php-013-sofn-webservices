@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        factory(\App\Client::class, 10)->create()->each(function ($client) {
+            foreach (range(1, 20) as $v) {
+                $client->addresses()->save(factory(\App\Address::class)->make());
+            }
+        });
     }
 }

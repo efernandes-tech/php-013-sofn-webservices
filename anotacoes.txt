@@ -14,3 +14,7 @@
         touch database/database.sqlite
     - Rodar.
         php -S localhost:1337 -t public public/index.php
+- Estrutura inicial da aplicação.
+    - Rodar migrations e seeders.
+        php artisan migrate
+        php artisan db:seed
