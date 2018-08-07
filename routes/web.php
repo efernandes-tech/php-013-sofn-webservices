@@ -24,4 +24,6 @@ $router->group([
     $router->get('{id}','ClientsController@show');
 
     $router->post('','ClientsController@store');
+
+    $router->put('{id}','ClientsController@update');
 });

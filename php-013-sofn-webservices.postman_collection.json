@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "cfabd830-979d-486e-895b-71f39a732104",
+			"_postman_id": "78d62061-179b-49c5-b66e-cb638b7feb4b",
 			"name": "GET http://localhost:1337/api/clients",
 			"request": {
 				"method": "GET",
@@ -28,7 +28,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fd6d4655-3be7-43b4-baf5-f9bbcb128c00",
+			"_postman_id": "102570dd-ba94-4cf7-a088-36607976ff84",
 			"name": "GET http://localhost:1337/api/clients/{id}",
 			"request": {
 				"method": "GET",
@@ -51,7 +51,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a8554ead-6b25-43ea-8c62-f9b906a3d87e",
+			"_postman_id": "8d3627b5-3f84-4177-9e29-2966ce631cfc",
 			"name": "POST http://localhost:1337/api/clients",
 			"request": {
 				"method": "POST",
@@ -75,6 +75,37 @@
 					"path": [
 						"api",
 						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9ebd5f22-d74d-4886-922e-d3e6d08e9a45",
+			"name": "PUT http://localhost:1337/api/clients/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"teste1a\",\n\t\"email\": \"teste2b\",\n\t\"phone\": \"teste3c\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/clients/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients",
+						"2"
 					]
 				}
 			},

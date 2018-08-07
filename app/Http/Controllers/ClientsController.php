@@ -23,4 +23,15 @@ class ClientsController extends Controller
 
         return response()->json($client, 201);
     }
+
+    public function update(Request $request, $id)
+    {
+        $client = Client::find($id);
+
+        $client->fill($request->all());
+
+        $client->save();
+
+        return response()->json($client, 200);
+    }
 }
