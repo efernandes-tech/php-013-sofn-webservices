@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "97e76d5f-38a7-4669-9739-13adeac205cb",
+		"name": "php-013-sofn-webservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "cfabd830-979d-486e-895b-71f39a732104",
+			"name": "GET http://localhost:1337/api/clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/api/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "fd6d4655-3be7-43b4-baf5-f9bbcb128c00",
+			"name": "GET http://localhost:1337/api/clients/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/api/clients/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "a8554ead-6b25-43ea-8c62-f9b906a3d87e",
+			"name": "POST http://localhost:1337/api/clients",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"teste1\",\n\t\"email\": \"teste2\",\n\t\"phone\": \"teste3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

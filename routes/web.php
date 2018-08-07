@@ -20,5 +20,8 @@ $router->group([
     // 'namespace' => 'App\Http\Controllers'
 ], function () use ($router) {
     $router->get('','ClientsController@index');
+
     $router->get('{id}','ClientsController@show');
+
+    $router->post('','ClientsController@store');
 });
