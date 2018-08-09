@@ -10,7 +10,7 @@ class ClientsController extends Controller
 {
     public function index()
     {
-        return Client::all();
+        return son_response()->make(Client::all());
     }
 
     public function show($id)
@@ -18,7 +18,7 @@ class ClientsController extends Controller
         if (!($client = Client::find($id))) {
             throw new ModelNotFoundException("Client requisitado não existe");
         } else {
-            return $client;
+            return son_response()->make($client);
         }
     }
 
@@ -32,7 +32,7 @@ class ClientsController extends Controller
 
         $client = Client::create($request->all());
 
-        return response()->json($client, 201);
+        return son_response()->make($client, 201);
     }
 
     public function update(Request $request, $id)
@@ -50,7 +50,7 @@ class ClientsController extends Controller
 
             $client->save();
 
-            return response()->json($client, 200);
+            return son_response()->make($client, 200);
         }
     }
 
@@ -60,7 +60,8 @@ class ClientsController extends Controller
             throw new ModelNotFoundException("Client requisitado não existe");
         } else {
             $client->delete();
-            return response()->json("", 204);
+
+            return son_response()->make("", 204);
         }
     }
 }

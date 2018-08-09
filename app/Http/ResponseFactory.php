@@ -17,7 +17,7 @@ class ResponseFactory extends Response
 
         $acceptHeader = $request->header('accept');
 
-        if ($acceptHeader == '\*/\*') {
+        if ($acceptHeader == '*/*') {
             return $this->json($content, $status, $headers);
         }
 
