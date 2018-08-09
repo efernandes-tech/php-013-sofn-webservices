@@ -6,7 +6,39 @@
 	},
 	"item": [
 		{
-			"_postman_id": "78d62061-179b-49c5-b66e-cb638b7feb4b",
+			"name": "GET http://localhost:1337/api/clients XML",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/api/clients/5/address/81",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients",
+						"5",
+						"address",
+						"81"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GET http://localhost:1337/api/clients",
 			"request": {
 				"method": "GET",
@@ -28,14 +60,13 @@
 			"response": []
 		},
 		{
-			"_postman_id": "102570dd-ba94-4cf7-a088-36607976ff84",
 			"name": "GET http://localhost:1337/api/clients/{id}",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://localhost:1337/api/clients/2",
+					"raw": "http://localhost:1337/api/clients/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -44,14 +75,13 @@
 					"path": [
 						"api",
 						"clients",
-						"2"
+						"5"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"_postman_id": "8d3627b5-3f84-4177-9e29-2966ce631cfc",
 			"name": "POST http://localhost:1337/api/clients",
 			"request": {
 				"method": "POST",
@@ -81,7 +111,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9ebd5f22-d74d-4886-922e-d3e6d08e9a45",
 			"name": "PUT http://localhost:1337/api/clients/{id}",
 			"request": {
 				"method": "PUT",
@@ -96,7 +125,7 @@
 					"raw": "{\n\t\"name\": \"teste1a\",\n\t\"email\": \"teste2b\",\n\t\"phone\": \"teste3c\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:1337/api/clients/2",
+					"raw": "http://localhost:1337/api/clients/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -105,7 +134,37 @@
 					"path": [
 						"api",
 						"clients",
-						"2"
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE http://localhost:1337/api/clients/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/clients/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients",
+						"8"
 					]
 				}
 			},
