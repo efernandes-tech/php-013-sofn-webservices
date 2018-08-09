@@ -26,4 +26,6 @@ $router->group([
     $router->post('','ClientsController@store');
 
     $router->put('{id}','ClientsController@update');
+
+    $router->delete('{id}','ClientsController@destroy');
 });

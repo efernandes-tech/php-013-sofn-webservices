@@ -34,4 +34,13 @@ class ClientsController extends Controller
 
         return response()->json($client, 200);
     }
+
+    public function destroy($id)
+    {
+        $client = Client::find($id);
+
+        $client->delete();
+
+        return response()->json(true, 204);
+    }
 }
