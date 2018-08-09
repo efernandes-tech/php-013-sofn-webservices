@@ -48,6 +48,7 @@ class Handler extends ExceptionHandler
         $arrayException = [
             HttpException::class,
             ModelNotFoundException::class,
+            ValidationException::class,
         ];
 
         if (in_array(get_class($e), $arrayException)) {
@@ -60,7 +61,11 @@ class Handler extends ExceptionHandler
                 'about_error' => 'algum link'
             ];
 
-            return response()->json($arrayError,$response->getStatusCode());
+            if ($e instanceof ValidationException) {
+                $arrayError['fields'] = $e->validator->getMessageBag()->toArray();
+            }
+
+            return son_response()->make($arrayError, $response->getStatusCode());
         }
 
         return parent::render($request, $e);
