@@ -21,3 +21,6 @@
 - Media-type - XML e JSON.
     - Tratando a resposta XML.
         composer require zendframework/zend-config
+- Instalando zend-soap.
+    - Instalação:
+        composer require zendframework/zend-soap
