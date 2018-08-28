@@ -70,3 +70,17 @@ $router->get('tcu', function () {
         'dataAtualizacao' => '2016-08-08'
     ]));
 });
+
+$uri = 'http://son-soap.dev:8080';
+
+$router->get('son-soap.wsdl', function () use ($uri) {
+    $autoDiscover = new \Zend\Soap\AutoDiscover();
+
+    $autoDiscover->setUri("$uri/server");
+
+    $autoDiscover->setServiceName('SONSOAP');
+
+    $autoDiscover->addFunction('soma');
+
+    $autoDiscover->handle();
+});
