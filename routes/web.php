@@ -11,6 +11,8 @@
 |
 */
 
+// REST
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
@@ -45,6 +47,9 @@ $router->group([
     $router->delete('{id}','AddressesController@destroy');
 });
 
+// SOAP
+
+/* Usando SOAP de terceiro. */
 $router->get('tcu', function () {
     $client = new \Zend\Soap\Client('http://contas.tcu.gov.br/debito/CalculoDebito?wsdl');
 
@@ -71,7 +76,8 @@ $router->get('tcu', function () {
     ]));
 });
 
-$uri = 'http://son-soap.dev:8080';
+/* Usando SOAP local (Virtual Host no Apache do Wampserver. */
+$uri = 'http://son-soap:80/public';
 
 $router->get('son-soap.wsdl', function () use ($uri) {
     $autoDiscover = new \Zend\Soap\AutoDiscover();
@@ -83,4 +89,36 @@ $router->get('son-soap.wsdl', function () use ($uri) {
     $autoDiscover->addFunction('soma');
 
     $autoDiscover->handle();
+});
+
+/**
+ * @param int $num1
+ * @param int $num2
+ * @return int
+ */
+function soma($num1, $num2)
+{
+    return $num1 + $num2;
+}
+
+/* Criando o meu SOAP. */
+$router->post('server', function () use ($uri) {
+    $server = new \Zend\Soap\Server("$uri/son-soap.wsdl", [
+        'cache_wsdl' => WSDL_CACHE_NONE
+    ]);
+
+    $server->setUri("$uri/server");
+
+    return $server->setReturnResponse(true)
+        ->addFunction('soma')
+        ->handle();
+});
+
+/* Usando o meu SOAP. */
+$router->get('soap-test', function () use ($uri) {
+    $client = new \Zend\Soap\Client("$uri/son-soap.wsdl", [
+        'cache_wsdl' => WSDL_CACHE_NONE
+    ]);
+
+    print_r($client->soma(100, 200));
 });

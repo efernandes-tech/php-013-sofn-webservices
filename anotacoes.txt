@@ -24,3 +24,10 @@
 - Instalando zend-soap.
     - Instalação:
         composer require zendframework/zend-soap
+- Criando primeiro WSDL.
+    - Criar um Virtual Host no Apache do Wampserver com o nome de:
+        son-soap
+    - O Virtual Host deve apontar para a pasta deste projeto.
+        c:/users/ederson.fernandes/desktop/ederson/full-stack_developer/php-013-sofn-webservices
+    - URI do SOAP:
+        http://son-soap:80/public
