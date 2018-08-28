@@ -44,3 +44,19 @@ $router->group([
 
     $router->delete('{id}','AddressesController@destroy');
 });
+
+$router->get('tcu', function () {
+    $client = new \Zend\Soap\Client('http://contas.tcu.gov.br/debito/CalculoDebito?wsdl');
+
+    echo "Informações do Servidor:";
+
+    print_r($client->getOptions());
+
+    echo "Funções:";
+
+    print_r($client->getFunctions());
+
+    echo "Tipos:";
+
+    print_r($client->getTypes());
+});

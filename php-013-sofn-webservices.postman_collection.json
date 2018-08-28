@@ -39,6 +39,39 @@
 			"response": []
 		},
 		{
+			"name": "GET http://localhost:1337/api/clients XML Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/api/clients/5/address/81",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"clients",
+						"5",
+						"address",
+						"81"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GET http://localhost:1337/api/clients",
 			"request": {
 				"method": "GET",
@@ -165,6 +198,35 @@
 						"api",
 						"clients",
 						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP http://localhost:1337/tcu",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/tcu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"tcu"
 					]
 				}
 			},
