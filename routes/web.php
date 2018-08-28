@@ -49,14 +49,24 @@ $router->get('tcu', function () {
     $client = new \Zend\Soap\Client('http://contas.tcu.gov.br/debito/CalculoDebito?wsdl');
 
     echo "Informações do Servidor:";
-
     print_r($client->getOptions());
 
     echo "Funções:";
-
     print_r($client->getFunctions());
 
     echo "Tipos:";
-
     print_r($client->getTypes());
+
+    echo "Resultado:";
+    print_r($client->obterSaldoAtualizado([
+        'parcelas' => [
+            'parcela' => [
+                'data' => '1995-01-01',
+                'tipo' => 'D',
+                'valor' => 35000
+            ]
+        ],
+        'aplicaJuros' => true,
+        'dataAtualizacao' => '2016-08-08'
+    ]));
 });
