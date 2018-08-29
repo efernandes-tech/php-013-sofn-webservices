@@ -231,6 +231,152 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "SOAP http://localhost:1337/tcu Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/tcu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"tcu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP http://localhost:1337/son-soap.wsdl",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/son-soap.wsdl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"son-soap.wsdl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP http://localhost:1337/soap-test",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/soap-test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"soap-test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP http://localhost:1337/client/son-soap.wsdl",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/client/son-soap.wsdl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"client",
+						"son-soap.wsdl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP http://localhost:1337/soap-client",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1337/soap-client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"soap-client"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
