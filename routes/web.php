@@ -158,5 +158,11 @@ $router->get('soap-client', function () use ($uriClient) {
         'cache_wsdl' => WSDL_CACHE_NONE
     ]);
 
-    print_r($client->listAll());
+    // print_r($client->listAll());
+
+    print_r($client->create([
+        'name' => 'Ederson Fernandes',
+        'email' => 'edersonluis.rf@gmail.com',
+        'phone' => '5555'
+    ]));
 });
