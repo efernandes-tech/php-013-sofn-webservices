@@ -109,7 +109,8 @@ $router->post('server', function () use ($uri) {
 
     $server->setUri("$uri/server");
 
-    return $server->setReturnResponse(true)
+    return $server
+        ->setReturnResponse(true)
         ->addFunction('soma')
         ->handle();
 });
@@ -121,4 +122,41 @@ $router->get('soap-test', function () use ($uri) {
     ]);
 
     print_r($client->soma(100, 200));
+});
+
+// SOAP server com client.
+
+$uriClient = "$uri/client";
+
+$router->get('client/son-soap.wsdl', function () use ($uriClient) {
+    $autoDiscover = new \Zend\Soap\AutoDiscover();
+
+    $autoDiscover->setUri("$uriClient/server");
+
+    $autoDiscover->setServiceName('SONSOAP');
+
+    $autoDiscover->setClass(\App\Soap\ClientsSoapController::class);
+
+    $autoDiscover->handle();
+});
+
+$router->post('client/server', function () use ($uriClient) {
+    $server = new \Zend\Soap\Server("$uriClient/son-soap.wsdl", [
+        'cache_wsdl' => WSDL_CACHE_NONE
+    ]);
+
+    $server->setUri("$uriClient/server");
+
+    return $server
+        ->setReturnResponse(true)
+        ->setClass(\App\Soap\ClientsSoapController::class)
+        ->handle();
+});
+
+$router->get('soap-client', function () use ($uriClient) {
+    $client = new \Zend\Soap\Client("$uriClient/son-soap.wsdl", [
+        'cache_wsdl' => WSDL_CACHE_NONE
+    ]);
+
+    print_r($client->listAll());
 });
